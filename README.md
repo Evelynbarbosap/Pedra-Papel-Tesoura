@@ -1,1 +1,0 @@
-# Pedra-Papel-Tesoura
