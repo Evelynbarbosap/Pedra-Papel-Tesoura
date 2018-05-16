@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jogotrabalho</title>
+</head>
+<script>
+
+var opcoes = [
+
+    "pedra", "papel", "tesoura"
+
+];
+
+    function play() {
+
+        var pontoJogador = 0;
+        var pontoPC = 0;
+
+    while(pontoJogador < 4 &&  pontoPC < 4) {
+
+   var opcaoJogador = prompt('Faça sua escolha: "Pedra", "Papel" ou "Tesoura".');
+
+   var opcaoPC = opcoes[Math.floor(Math.random() * opcoes.length)];
+
+    opcaoJogador = opcaoJogador.toLowerCase();
+
+    if(opcaoJogador == "pedra" && opcaoPC == "tesoura"){
+        pontoJogador++;
+        alert("VOCÊ VENCEU a partida! seus pontos ate aqui foram:\n" + pontoJogador + "Pontos do PC: " + pontoPC);
+    }else if (opcaoJogador == "tesoura" && opcaoPC == "papel") {
+        pontoJogador++;
+        alert("VOCÊ VENCEU a partida!\n seus pontos ate aqui foram:" + pontoJogador + "Pontos do PC" + pontoPC);
+    }else if (opcaoJogador == "papel" && opcaoPC == "pedra") {
+        pontoJogador++;
+        alert("VOCÊ VENCEU a partida!\n seus pontos ate aqui foram:" + pontoJogador + "Pontos do PC" + pontoPC);
+    }
+
+    if(opcaoJogador == "tesoura" && opcaoPC == "pedra"){
+        pontoPC++;
+        alert("PC VENCEU a partida! seus pontos ate aqui foram:" +pontoJogador+ "Pontos do PC:" + pontoPC);
+    } else if (opcaoJogador == "papel" && opcaoPC == "tesoura"){
+        pontoPC++;
+        alert("PC VENCEU a partida! seus pontos ate aqui foram:" +pontoJogador+ "Pontos do PC:" + pontoPC);
+    } else if (opcaoJogador == "Pedra" && opcaoPC == "Papel"){
+        pontoPC++;
+        alert("PC VENCEU a partida! seus pontos ate aqui foram:" +pontoJogador + "Pontos do PC:" + pontoPC);
+    } else if (opcaoJogador == opcaoPC) {
+        alert("EMPATE!");
+    }
+    }
+    }
+    
+</script>
+<body>
+    <img src="https://wantgarlic.files.wordpress.com/2016/03/pedra-papel-e-tesoura-87021.gif" onmouseover="play()"/> 
+    <br> <p><b>Passe o mouse para jogar!</b></p>
+</body>
+</html>
